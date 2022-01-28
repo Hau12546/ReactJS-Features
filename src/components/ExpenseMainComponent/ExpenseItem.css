@@ -19,6 +19,14 @@
 	flex: 1;
 }
 
+.baseButton{
+	padding: .5em;
+	box-shadow: -3px 3px #FFFF, -1px 1px #FFFF, -3px 3px #FFFF;
+	background-color: #FFFF;
+	/* border: 1px solid rgb(104, 99, 99); */
+	border: none;
+}
+
 .expense-item h2 {
 	color: #3a3a3a;
 	font-size: 1rem;
@@ -53,4 +61,6 @@
 			font-size: 1.25rem;
 			padding: 0.5rem 1.5rem;
 	}
+
+	
 }
