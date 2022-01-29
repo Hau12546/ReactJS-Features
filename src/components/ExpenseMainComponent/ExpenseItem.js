@@ -5,19 +5,20 @@ import { useState } from 'react';
 
 const ExpenseItem = (props)=>{
 	const [status, setStatus] = useState(props.expenseDetail.status);
-	const SetStatus = (value)=>{
+	const SetStatus = (()=>{
 		if(status==='Sold'){
 			setStatus('Available');
 		}else{
 			setStatus('Sold');
 		}
-	}
+	});
+	const EURAmount = new Intl.NumberFormat('en-US',{style:'currency',currency:'EUR'}).format(props.expenseDetail.amount);
 	return (
 		<Card className='expense-item'>
 			<ExpenseDate date={props.expenseDetail.date}></ExpenseDate>
 			<div className='expense-item__description'>
 				<h2>{props.expenseDetail.title} Status: {status}</h2>
-				<div className='expense-item__price'>{props.expenseDetail.amount}</div>
+				<div className='expense-item__price'>{EURAmount}</div>
 				<div><button className='baseButton' type='button' onClick={SetStatus}>Set Status</button></div>
 				</div>
 		</Card>

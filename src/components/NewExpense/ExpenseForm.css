@@ -29,3 +29,11 @@
 	justify-content: flex-end;
 	align-items: center;
 }
+
+.show-new-expense-form{
+	padding-top: 1em;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}

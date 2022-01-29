@@ -6,13 +6,16 @@ import NewExpense from './components/NewExpense/NewExpense';
 const App = ()=>{
   let ExpenseList = [
     {id:'0',title:'Lamborgini', amount:500, date: new Date(2022, 1, 2), status:'Sold'},
-    {id:'1',title:'AirPlane', amount:1000000, date: new Date(2019, 7, 2), status:'Available'}
+    {id:'1',title:'AirPlane2021', amount:1000000, date: new Date(2021, 7, 2), status:'Available'},
+    {id:'2',title:'AirPlane2020', amount:800000, date: new Date(2020, 7, 2), status:'Available'},
+    // {id:'3',title:'AirPlane2019', amount:700000, date: new Date(2019, 7, 2), status:'Available'},
+    {id:'4',title:'AirPlane2018', amount:500000, date: new Date(2018, 7, 2), status:'Available'},
   ];
   const [Expenses,setExpenseItem] = useState(ExpenseList);
   const ReceiveExpenseItem = ((expenseItem)=>{
-    ExpenseList.push(expenseItem);
-    console.log(ExpenseList)
-    setExpenseItem(ExpenseList)
+    setExpenseItem((preState)=>{
+      return [expenseItem,...preState];
+    });
   });
   return (
     <div className="App" >

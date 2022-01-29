@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './ExpenseForm.css';
 const ExpenseForm = (props)=>{
+	const [isNewExpense,setNewExpense] = useState(false);
 	const [userInput, setUserInput] = useState({
 		enteredTitle:'',
 		enteredAmount:'',
@@ -55,27 +56,47 @@ const ExpenseForm = (props)=>{
 		});
 	});
 
-	return (
-		<form onSubmit={submitHandler}>
-			<div className='new-expense__controls'>
-				<div className='new-expense__control'>
-					<label>Title</label>
-					<input type='text' value={userInput.enteredTitle} onChange={TitleChangeHandler} />
+	const ShowExpenseHandler = (()=>{
+		setNewExpense(true);
+	});
+
+	const CloseExpenseHandler = (()=>{
+		setNewExpense(false);
+	});
+
+	if(isNewExpense){
+		return (
+			<form onSubmit={submitHandler}>
+				<div className='new-expense__controls'>
+					<div className='new-expense__control'>
+						<label>Title</label>
+						<input type='text' value={userInput.enteredTitle} onChange={TitleChangeHandler} />
+					</div>
+					<div className='new-expense__control'>
+						<label>Amount</label>
+						<input type='number' min='0.01' step='0.01' value={userInput.enteredAmount} onChange={AmountChangeHandler} />
+					</div>
+					<div className='new-expense__control'>
+						<label>Date</label>
+						<input type='date' min='2019-01-01' max='2022-01-28' value={userInput.enteredDate} onChange={DateChangeHandler} />
+					</div>
+					<div className='new-expense__actions'>
+						<button type='button' onClick={CloseExpenseHandler}>Cancel</button>
+						<button type='submit'>Add Expense</button>
+					</div>
 				</div>
-				<div className='new-expense__control'>
-					<label>Amount</label>
-					<input type='number' min='0.01' step='0.01' value={userInput.enteredAmount} onChange={AmountChangeHandler} />
-				</div>
-				<div className='new-expense__control'>
-					<label>Date</label>
-					<input type='date' min='2019-01-01' max='2022-01-28' value={userInput.enteredDate} onChange={DateChangeHandler} />
-				</div>
-				<div className='new-expense__actions'>
-					<button type='submit'>Add Expense</button>
-				</div>
-			</div>
-		</form>
-	);
+			</form>
+		);
+	}else{
+		return (
+		<form>
+			<div className='show-new-expense-form'>
+				<button type='submit' onClick={ShowExpenseHandler}>Add New Expense</button>
+		</div>
+		</form>);
+	}
+
+	
 }
 
 export default ExpenseForm;
