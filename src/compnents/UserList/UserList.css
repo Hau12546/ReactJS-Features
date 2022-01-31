@@ -1,0 +1,9 @@
+.gradient-list{
+	display: block;
+	position: relative;
+	margin: 3em 30%;
+	padding: .5em;
+	list-style-type: none;
+	/* background-color: rgb(206, 175, 175); */
+}
+

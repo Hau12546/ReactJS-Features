@@ -1,0 +1,8 @@
+.card {
+ position: relative;
+ margin: 1em 30%;
+ background: #000;
+ border-radius: 15px;
+ box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
+ color: rgb(221, 207, 13);
+}

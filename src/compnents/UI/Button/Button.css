@@ -1,0 +1,14 @@
+.btn{
+	padding: .5em;
+	font-size: 1.10rem;
+	font-weight: 500;
+	border-radius: 5px;
+	border: 1px solid rgb(248, 249, 251);
+	background-color: rgb(26, 72, 197);
+	color: #FFFF;
+}
+
+.submit-btn{
+	margin-top: 1em;
+	/* margin-right: 3em; */
+}

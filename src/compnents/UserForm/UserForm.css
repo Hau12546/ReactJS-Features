@@ -1,0 +1,50 @@
+.form-control{
+	margin-block: 1em;
+	margin-inline: 30%;
+	padding: 1em;
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	grid-template-rows: repeat(1,1fr);
+	row-gap: .5em;
+	column-gap: .5em;
+	border-radius: 10px;
+	background-color: rgb(75, 70, 70);
+	box-shadow: -1px 10px 10px rgb(102, 97, 97);
+}
+
+.form-control label{
+	font-size: 1.25rem;
+	font-weight: 500;
+	color: #FFFF;
+}
+
+.form-control input{
+	padding: .5em;
+	border: 2px solid rgb(230, 222, 222);
+	border-radius: 5px;
+}
+
+
+.form-input{
+	display: grid;
+	grid-template-rows: repeat(1,1fr);
+	grid-template-columns: 30% auto;
+	column-gap: .5em;
+}
+
+
+
+
+
+
+.form-control div:nth-child(3){
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.form-control div:nth-child(3){
+	grid-column-start: 2;
+}
