@@ -1,0 +1,17 @@
+  //   try {
+  //     const response = await fetch(
+  //       DefaultAPI.get
+  //     );
+
+  //     if (!response.ok) {
+  //       throw new Error('Request failed!');
+  //     }
+
+  //     const data = await response.json();
+
+      
+  //   } catch (err) {
+  //     setError(err.message || 'Something went wrong!');
+  //   }
+  //   setIsLoading(false);
+  // };
